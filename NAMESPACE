@@ -2,7 +2,6 @@
 
 export(apply_checks)
 export(exists_in)
-export(outputs_factory)
 export(ql_errors)
 export(ql_messages)
 export(ql_output_handler)
