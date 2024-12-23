@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+set.seed(1)
 ```
 
 # qlcheckr
@@ -18,6 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/qlcheckr)](https://CRAN.R-project.org/package=qlcheckr)
+[![R-CMD-check](https://github.com/learnr-academy/qlcheckr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/learnr-academy/qlcheckr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `qlcheckr` is an R package designed to analyse parsed user code by searching for specific patterns within its Abstract Syntax Tree (AST). The package is ideal for interactive code evaluation in Quarto Live environments, enabling precise checks for function usage, arguments, and expressions.

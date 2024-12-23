@@ -9,6 +9,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/qlcheckr)](https://CRAN.R-project.org/package=qlcheckr)
+[![R-CMD-check](https://github.com/learnr-academy/qlcheckr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/learnr-academy/qlcheckr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `qlcheckr` is an R package designed to analyse parsed user code by
@@ -110,8 +111,8 @@ any value is greater than a threshold:
 ``` r
 results()
 #> [[1]]
-#>  [1] -0.63647409  0.07660066  0.98987571  0.02784903  0.23249837  1.07487983
-#>  [7] -0.78001768  0.69280266 -0.87730468 -0.51348841
+#>  [1] -0.6264538  0.1836433 -0.8356286  1.5952808  0.3295078 -0.8204684
+#>  [7]  0.4874291  0.7383247  0.5757814 -0.3053884
 #> 
 #> [[2]]
 #> [1] NaN
