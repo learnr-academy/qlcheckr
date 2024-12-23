@@ -1,4 +1,5 @@
 export(errors)
+export(exists_in)
 export(messages)
 export(outputs)
 export(outputs_factory)
