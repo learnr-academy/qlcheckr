@@ -28,8 +28,6 @@ ql_messages()
 \item{class}{Character. The class of objects to extract from the \code{evaluate} output.}
 
 \item{field}{Character. The field within the object to extract (e.g., \code{"value"} or \code{"message"}).}
-
-\item{vec}{Logical. Whether the results should be unlisted into a vector or not.}
 }
 \value{
 A list containing the extracted fields from the specified class of outputs.

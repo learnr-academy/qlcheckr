@@ -33,7 +33,6 @@ outputs_factory <- function(class, field, vec = FALSE) {
 #'
 #' @param class Character. The class of objects to extract from the `evaluate` output.
 #' @param field Character. The field within the object to extract (e.g., `"value"` or `"message"`).
-#' @param vec Logical. Whether the results should be unlisted into a vector or not.
 #'
 #' @return A list containing the extracted fields from the specified class of outputs.
 #'
@@ -82,12 +81,31 @@ ql_messages <- outputs_factory("message", "message", vec = TRUE)
 #'
 #' @keywords internal
 #' @export
-ql_output_handler <- evaluate::new_output_handler(
-  value = function(x, visible) {
-    res <- list(value = x, visible = FALSE)
-    res$class <- class(res$value)
-    class(res) <- "result"
-    res
-  }
+#'
+# dput(evaluate::new_output_handler(
+#   value = function(x, visible) {
+#     res <- list(value = x, visible = FALSE)
+#     res$class <- class(res$value)
+#     class(res) <- "result"
+#     res
+#   }
+# ))
+ql_output_handler <-structure(
+  list(
+    source = identity,
+    text = identity,
+    graphics = identity,
+    message = identity,
+    warning = identity,
+    error = identity,
+    value = function (x, visible) {
+      res <- list(value = x, visible = FALSE)
+      res$class <- class(res$value)
+      class(res) <- "result"
+      res
+    },
+    calling_handlers = list()
+  ),
+  class = "output_handler"
 )
 

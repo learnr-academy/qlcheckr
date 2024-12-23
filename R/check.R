@@ -79,14 +79,14 @@ apply_checks <- function(
                     ".stage", ".user_code")
     check_env <- as.list(parent.frame(3L))
     check_loc <- match(substring(check_opts, 2), names(check_env))
-    check_env <- check_env[na.omit(check_loc)]
+    check_env <- check_env[stats::na.omit(check_loc)]
     names(check_env) <- check_opts[!is.na(check_loc)]
     res$message <- paste(
       c(
         res$message,
         "<br><b>Debug information</b>",
-        capture.output(str(check_env)),
-        capture.output(str(list(
+        utils::capture.output(utils::str(check_env)),
+        utils::capture.output(utils::str(list(
           `ql_results()` = ql_results(),
           `ql_errors()` = ql_errors(),
           `ql_warnings()` = ql_warnings(),

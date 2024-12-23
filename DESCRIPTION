@@ -14,8 +14,10 @@ Description: Provides a framework for interactive code checking in Quarto Live.
     teaching, learning, and automated code assessment workflows.
 License: MIT + file LICENSE
 Imports: 
-    evaluate
+    stats,
+    utils
 Suggests: 
+    evaluate,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
