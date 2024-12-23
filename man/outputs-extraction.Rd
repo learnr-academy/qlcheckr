@@ -2,21 +2,18 @@
 % Please edit documentation in R/outputs.R
 \name{outputs-extraction}
 \alias{outputs-extraction}
-\alias{outputs_factory}
+\alias{ql_outputs}
 \alias{outputs}
 \alias{results}
 \alias{errors}
 \alias{warnings}
 \alias{messages}
-\alias{ql_outputs}
 \alias{ql_results}
 \alias{ql_errors}
 \alias{ql_warnings}
 \alias{ql_messages}
 \title{Extract Common Output Types from an Evaluate Object}
 \usage{
-outputs_factory(class, field, vec = FALSE)
-
 ql_outputs(class, field)
 
 ql_results()
@@ -31,6 +28,8 @@ ql_messages()
 \item{class}{Character. The class of objects to extract from the \code{evaluate} output.}
 
 \item{field}{Character. The field within the object to extract (e.g., \code{"value"} or \code{"message"}).}
+
+\item{vec}{Logical. Whether the results should be unlisted into a vector or not.}
 }
 \value{
 A list containing the extracted fields from the specified class of outputs.
@@ -49,8 +48,6 @@ The functions operate on an \code{.evaluate_result} object, which stores outputs
 \item \strong{Warnings}: Extracts the \code{message} field from objects of class \code{"warning"}.
 \item \strong{Messages}: Extracts the \code{message} field from objects of class \code{"message"}.
 }
-
-The \code{outputs_factory()} function serves as a helper to create these specialised extractors.
 }
 \examples{
 \dontshow{if (requireNamespace("evaluate", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

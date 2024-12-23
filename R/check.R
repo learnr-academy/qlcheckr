@@ -87,10 +87,10 @@ apply_checks <- function(
         "<br><b>Debug information</b>",
         capture.output(str(check_env)),
         capture.output(str(list(
-          `results()` = results(),
-          `errors()` = errors(),
-          `warnings()` = warnings(),
-          `messages()` = messages()
+          `ql_results()` = ql_results(),
+          `ql_errors()` = ql_errors(),
+          `ql_warnings()` = ql_warnings(),
+          `ql_messages()` = ql_messages()
         )))
       ),
       collapse = "<br>"

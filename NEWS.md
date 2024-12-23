@@ -17,8 +17,8 @@
 - Added `exists_in()` to evaluate the presence of specific conditions,
   results, or errors across multiple outputs.
 - Added helper functions for extracting useful evaluation results:
-  - `results()` for successful evaluation results.
-  - `errors()` for error messages.
-  - `warnings()` for warning messages.
-  - `messages()` for messages output.
-  - `outputs()` for custom filtering of results.
+  - `ql_results()` for successful evaluation results.
+  - `ql_errors()` for error messages.
+  - `ql_warnings()` for warning messages.
+  - `ql_messages()` for messages output.
+  - `ql_outputs()` for custom filtering of results.
