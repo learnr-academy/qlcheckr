@@ -3,7 +3,10 @@ outputs_factory <- function(class, field, vec = FALSE) {
   force(field)
   force(vec)
   function() {
-    outputs <- get(".evaluate_result", parent.frame(2))
+    outputs <- tryCatch(
+      get(".evaluate_result", parent.frame(2)),
+      error = function(e) NULL
+    )
     res <- Filter(\(x) inherits(x, class), outputs)
     res <- lapply(res, `[[`, field)
     if(vec) {
