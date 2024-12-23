@@ -18,6 +18,13 @@ The package is ideal for interactive code evaluation in Quarto Live
 environments, enabling precise checks for function usage, arguments, and
 expressions.
 
+The `qlcheckr` package is designed with minimal dependencies to ensure a
+lightweight footprint, making it an ideal choice for integration with
+[Quarto Live](https://github.com/r-wasm/quarto-live) environments. By
+avoiding external package dependencies, `qlcheckr` significantly reduces
+file size and load times. The package design prioritises simplicity and
+speed, providing helpful tools without unnecessary bloat.
+
 ## Features
 
 - **Function Usage Detection**: Verify if a specific function is used in
