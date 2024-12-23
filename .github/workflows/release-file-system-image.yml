@@ -4,14 +4,14 @@ on:
   release:
     # Must republish release to update assets
     types: [ published ]
-    inputs:
-      strip: "demo, doc, examples, help, html, include, tests, vignette"
 
 name: Build and deploy wasm R package image
 
 jobs:
   release-file-system-image:
     uses: r-wasm/actions/.github/workflows/release-file-system-image.yml@v2
+    inputs:
+      strip: "demo, doc, examples, help, html, include, tests, vignette"
     permissions:
       # For publishing artifact files to the release
       contents: write
