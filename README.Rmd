@@ -90,29 +90,29 @@ output_handler = ql_output_handler)
 ```
 
 
-<!-- TODO: Create dummy `.evaluate_results` and directly use `results()`, `errors()`, ... -->
+<!-- TODO: Create dummy `.evaluate_results` and directly use `ql_results()`, `ql_errors()`, ... -->
 
 #### Find a Matching Result
 
 Suppose you are processing a list of numeric outputs and want to find if any value is greater than a threshold:
 
 ```{r}
-results()
+ql_results()
 
-exists_in(results(), ~ any(. > 0.5))
+exists_in(ql_results(), ~ any(. > 0.5))
 ```
 
 This helps quickly confirm if any result (among many outputs) passes your test.
 
 #### Detecting specific errors
 
-Consider checking code that might generate errors, which can be obtained in Quarto Live check environments with the `errors()` helper. `exists_in()` can again be used to search for specific errors.
+Consider checking code that might generate errors, which can be obtained in Quarto Live check environments with the `ql_errors()` helper. `exists_in()` can again be used to search for specific errors.
 
 ```{r}
-errors()
+ql_errors()
 
-exists_in(errors(), grepl, pattern = "not subsettable")
-exists_in(errors(), grepl, pattern = "non-numeric argument")
+exists_in(ql_errors(), grepl, pattern = "not subsettable")
+exists_in(ql_errors(), grepl, pattern = "non-numeric argument")
 ```
 
 This is valuable for identifying and debugging specific errors among many possible results.
@@ -120,8 +120,8 @@ This is valuable for identifying and debugging specific errors among many possib
 It is also possible to search warnings and messages with similar helpers:
 
 ```{r}
-warnings()
-messages()
+ql_warnings()
+ql_messages()
 ```
 
 

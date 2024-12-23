@@ -52,11 +52,6 @@ parsed R code.
 
 ``` r
 library(qlcheckr)
-#> 
-#> Attaching package: 'qlcheckr'
-#> The following object is masked from 'package:base':
-#> 
-#>     warnings
 
 code <- quote(mean(x))
 search_ast(code, .fn = "mean")
@@ -101,7 +96,7 @@ message("Hello world")',
 output_handler = ql_output_handler)
 ```
 
-<!-- TODO: Create dummy `.evaluate_results` and directly use `results()`, `errors()`, ... -->
+<!-- TODO: Create dummy `.evaluate_results` and directly use `ql_results()`, `ql_errors()`, ... -->
 
 #### Find a Matching Result
 
@@ -109,7 +104,7 @@ Suppose you are processing a list of numeric outputs and want to find if
 any value is greater than a threshold:
 
 ``` r
-results()
+ql_results()
 #> [[1]]
 #>  [1] -0.6264538  0.1836433 -0.8356286  1.5952808  0.3295078 -0.8204684
 #>  [7]  0.4874291  0.7383247  0.5757814 -0.3053884
@@ -120,7 +115,7 @@ results()
 #> [[3]]
 #> NULL
 
-exists_in(results(), ~ any(. > 0.5))
+exists_in(ql_results(), ~ any(. > 0.5))
 #> [1] TRUE
 ```
 
@@ -130,16 +125,16 @@ your test.
 #### Detecting specific errors
 
 Consider checking code that might generate errors, which can be obtained
-in Quarto Live check environments with the `errors()` helper.
+in Quarto Live check environments with the `ql_errors()` helper.
 `exists_in()` can again be used to search for specific errors.
 
 ``` r
-errors()
+ql_errors()
 #> [1] "object of type 'closure' is not subsettable"
 
-exists_in(errors(), grepl, pattern = "not subsettable")
+exists_in(ql_errors(), grepl, pattern = "not subsettable")
 #> [1] TRUE
-exists_in(errors(), grepl, pattern = "non-numeric argument")
+exists_in(ql_errors(), grepl, pattern = "non-numeric argument")
 #> [1] FALSE
 ```
 
@@ -150,9 +145,9 @@ It is also possible to search warnings and messages with similar
 helpers:
 
 ``` r
-warnings()
+ql_warnings()
 #> [1] "NaNs produced"
-messages()
+ql_messages()
 #> [1] "Hello world\n"
 ```
 

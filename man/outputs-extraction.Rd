@@ -8,19 +8,24 @@
 \alias{errors}
 \alias{warnings}
 \alias{messages}
+\alias{ql_outputs}
+\alias{ql_results}
+\alias{ql_errors}
+\alias{ql_warnings}
+\alias{ql_messages}
 \title{Extract Common Output Types from an Evaluate Object}
 \usage{
 outputs_factory(class, field, vec = FALSE)
 
-outputs(class, field)
+ql_outputs(class, field)
 
-results()
+ql_results()
 
-errors()
+ql_errors()
 
-warnings()
+ql_warnings()
 
-messages()
+ql_messages()
 }
 \arguments{
 \item{class}{Character. The class of objects to extract from the \code{evaluate} output.}
@@ -57,15 +62,15 @@ log(-1)
 message("Hello world")', output_handler = ql_output_handler)
 
 # Extract results
-results()
+ql_results()
 
 # Extract errors
-errors()
+ql_errors()
 
 # Extract warnings
-warnings()
+ql_warnings()
 
 # Extract messages
-messages()
+ql_messages()
 \dontshow{\}) # examplesIf}
 }

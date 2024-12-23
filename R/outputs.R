@@ -28,16 +28,16 @@
 #' message("Hello world")', output_handler = ql_output_handler)
 #'
 #' # Extract results
-#' results()
+#' ql_results()
 #'
 #' # Extract errors
-#' errors()
+#' ql_errors()
 #'
 #' # Extract warnings
-#' warnings()
+#' ql_warnings()
 #'
 #' # Extract messages
-#' messages()
+#' ql_messages()
 #'
 #' @name outputs-extraction
 #' @aliases outputs results errors warnings messages
@@ -60,23 +60,23 @@ outputs_factory <- function(class, field, vec = FALSE) {
 
 #' @rdname outputs-extraction
 #' @export
-outputs <- function(class, field) outputs_factory(class, field)()
+ql_outputs <- function(class, field) outputs_factory(class, field)()
 
 #' @rdname outputs-extraction
 #' @export
-results <- outputs_factory("result", "value")
+ql_results <- outputs_factory("result", "value")
 
 #' @rdname outputs-extraction
 #' @export
-errors <- outputs_factory("error", "message", vec = TRUE)
+ql_errors <- outputs_factory("error", "message", vec = TRUE)
 
 #' @rdname outputs-extraction
 #' @export
-warnings <- outputs_factory("warning", "message", vec = TRUE)
+ql_warnings <- outputs_factory("warning", "message", vec = TRUE)
 
 #' @rdname outputs-extraction
 #' @export
-messages <- outputs_factory("message", "message", vec = TRUE)
+ql_messages <- outputs_factory("message", "message", vec = TRUE)
 
 #' This mimics the behaviour of quarto-live evaluate results
 #'
