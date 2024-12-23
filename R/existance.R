@@ -39,5 +39,5 @@ exists_in <- function(.x, .f, ..., .require = any) {
     .f <- function(.x, .y, ..., . = .x) {}
     body(.f) <- f[[length(f)]]
   }
-  .require(vapply(.x, .f, logical(1L), ...))
+  .require(vapply(.x, function(...) isTRUE(.f(...)), logical(1L), ...))
 }
