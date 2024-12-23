@@ -26,7 +26,9 @@ search_ast_impl <- function(.code, fn = NULL, fn_args = list()) {
 #' @param ... Additional arguments to search for in function calls.
 #'   These may include named or unnamed arguments.
 #' @param .expr A quoted or parsed R expression to search for within the code.
-#'   If `NULL`, expressions are not checked.
+#'   If `NULL`, expressions are not checked. Using `.expr` has priority over
+#'   `.fn` and `...`, if both conditions are specified only `.expr` will be
+#'   used.
 #'
 #' @return A logical value indicating whether the specified patterns were found
 #'   in the provided code (`TRUE`) or not (`FALSE`).
