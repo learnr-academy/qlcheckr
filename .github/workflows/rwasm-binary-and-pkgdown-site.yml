@@ -45,7 +45,7 @@ jobs:
           packages: "."
           repo-path: "_site"
           strip: "demo, doc, examples, help, html, include, tests, vignette"
-          compress: true
+          compress: false
 
       # Upload an artifact that will work with GitHub Pages
       - name: Upload Pages artifact
