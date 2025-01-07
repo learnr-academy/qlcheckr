@@ -1,5 +1,9 @@
 # qlcheckr (development version)
 
+## New features
+
+* Added `ql_src()` and `ql_ast()` for accessing user code and parsed ASTs.
+
 # qlcheckr 0.1.0
 
 ## Initial release

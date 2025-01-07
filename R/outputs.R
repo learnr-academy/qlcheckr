@@ -77,6 +77,16 @@ ql_warnings <- outputs_factory("warning", "message", vec = TRUE)
 #' @export
 ql_messages <- outputs_factory("message", "message", vec = TRUE)
 
+#' @rdname outputs-extraction
+#' @export
+ql_src <- outputs_factory("source", "src", vec = TRUE)
+
+#' @rdname outputs-extraction
+#' @export
+ql_ast <- function() {
+  parse(text = ql_src())
+}
+
 #' This mimics the behaviour of quarto-live evaluate results
 #'
 #' @keywords internal
