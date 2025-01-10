@@ -12,6 +12,8 @@
 \alias{ql_errors}
 \alias{ql_warnings}
 \alias{ql_messages}
+\alias{ql_src}
+\alias{ql_ast}
 \title{Extract Common Output Types from an Evaluate Object}
 \usage{
 ql_outputs(class, field)
@@ -23,6 +25,10 @@ ql_errors()
 ql_warnings()
 
 ql_messages()
+
+ql_src()
+
+ql_ast()
 }
 \arguments{
 \item{class}{Character. The class of objects to extract from the \code{evaluate} output.}

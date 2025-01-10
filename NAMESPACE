@@ -2,10 +2,12 @@
 
 export(apply_checks)
 export(exists_in)
+export(ql_ast)
 export(ql_errors)
 export(ql_messages)
 export(ql_output_handler)
 export(ql_outputs)
 export(ql_results)
+export(ql_src)
 export(ql_warnings)
 export(search_ast)
