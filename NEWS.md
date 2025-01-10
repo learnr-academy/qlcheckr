@@ -1,4 +1,4 @@
-# qlcheckr (development version)
+# qlcheckr 0.1.1
 
 ## New features
 
