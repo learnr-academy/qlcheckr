@@ -1,3 +1,9 @@
+# qlcheckr 0.1.2
+
+## Bug fixes
+
+* Fixed scoping issue with ql_*() evaluate results helper functions.
+
 # qlcheckr 0.1.1
 
 ## New features

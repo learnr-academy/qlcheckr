@@ -1,6 +1,6 @@
 Package: qlcheckr
 Title: Helpful Code Checking for Quarto Live
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Mitchell",
            family = "O'Hara-Wild",

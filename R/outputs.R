@@ -1,12 +1,20 @@
+# Search the parent frames for the evaluation results
+# Return NULL if they could not be found
+get_evaluate_result <- function(i = 1) {
+  found <- FALSE
+  while (!found && !identical(parent.frame(i), .GlobalEnv)) {
+    found <- exists(".evaluate_result", env = parent.frame(i))
+    i <- i + 1
+  }
+  if (found) get(".evaluate_result", parent.frame(i-1)) else NULL
+}
+
 outputs_factory <- function(class, field, vec = FALSE) {
   force(class)
   force(field)
   force(vec)
   function() {
-    outputs <- tryCatch(
-      get(".evaluate_result", parent.frame(2)),
-      error = function(e) NULL
-    )
+    outputs <- get_evaluate_result()
     res <- Filter(\(x) inherits(x, class), outputs)
     res <- lapply(res, `[[`, field)
     if(vec) {
