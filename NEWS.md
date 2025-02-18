@@ -1,3 +1,9 @@
+# qlcheckr 0.1.5
+
+## Bug fixes
+
+* Fixed hints on incorrect answers not being displayed.
+
 # qlcheckr 0.1.4
 
 ## Improvements

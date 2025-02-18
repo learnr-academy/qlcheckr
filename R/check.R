@@ -1,9 +1,9 @@
 as_html_list <- function(x) {
   if (!length(x)) return(NULL)
   paste0(
-    "<ul>",
-    sprintf("  <li>%s</li>\n", format(x)),
-    "</ul>"
+    "<ul>\n",
+    paste0(sprintf("  <li>%s</li>", format(x)), collapse = "\n"),
+    "\n</ul>"
   )
 }
 
@@ -56,7 +56,7 @@ apply_checks <- function(
     .msg_incorrect = "That's incorrect! Please try again...", #"❌ That's incorrect! Please try again...",
     .debug = FALSE
 ) {
-  checks <- as.logical(c(...))
+  checks <- c(...)
 
   res <- list(correct = all(!checks))
 
