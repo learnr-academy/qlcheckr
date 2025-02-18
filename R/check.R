@@ -62,9 +62,7 @@ apply_checks <- function(
 
   res$message <- paste(
     c(
-      "<b>",
-      if (res$correct) .msg_correct else .msg_incorrect,
-      "</b>",
+      paste0("<b>", if (res$correct) .msg_correct else .msg_incorrect, "</b>"),
       as_html_list(names(checks)[checks])
     ),
     collapse = "<br>"

@@ -1,3 +1,9 @@
+# qlcheckr 0.1.4
+
+## Improvements
+
+* Removed additional line break from feedback.
+
 # qlcheckr 0.1.3
 
 ## Bug fixes
