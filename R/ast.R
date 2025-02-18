@@ -1,7 +1,10 @@
 compare_args <- function(x, y) {
   val <- match(x, y)
   if(any(is.na(val))) return(FALSE)
-  identical(names(x), names(y)[val])
+  identical(
+    (names(x)%||%character(0L))[seq_along(x)],
+    (names(y)%||%character(0L))[val]
+  )
 }
 
 search_ast_impl <- function(.code, fn = NULL, fn_args = list()) {

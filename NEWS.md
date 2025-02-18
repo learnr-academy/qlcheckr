@@ -1,3 +1,9 @@
+# qlcheckr 0.1.3
+
+## Bug fixes
+
+* Fixed issue with `search_ast()` for calls without arguments.
+
 # qlcheckr 0.1.2
 
 ## Bug fixes
